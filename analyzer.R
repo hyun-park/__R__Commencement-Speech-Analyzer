@@ -9,7 +9,7 @@ zuckerberg <- tolower(grep("_",zuckerberg, value=T))
 
 head(zuckerberg)
 zuckerberg_fil <- grep("_nn|_nnp|_nnps|_vb|_vbd|_vbg|_vbn|_vbp|_vbz|_md|_jj|_jjr|_jjs|_prp|_prp$|_rb|_rbr|_rbs", zuckerberg, value=T)
-zuckerberg_fil <- grep("_nn|_nnp|_nnps|_vb|_vbd|_vbg|_vbn|_vbp", zuckerberg, value=T)
+zuckerberg_fil <- grep("_nn|_nnp|_nnps", zuckerberg, value=T)
 zuc_table<- sort(table(zuckerberg_fil), decreasing = T)
 
 Freq.zuckerberg <- data.frame(zuc_table)
