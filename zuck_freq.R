@@ -2,8 +2,6 @@ source('./analyzer2.R')
 source('./makewc.R', encoding='utf-8')
 
 zuck_txt <- analyzer('./원문/zuckerberg.txt')
-head(zuck_txt)
-
 grep("_VV$", zuck_txt, value=T)
 grep("_V[^V]", zuck_txt, value=T)
 grep("_V[^BH]", zuck_txt, value=T)
@@ -13,9 +11,7 @@ filtered_tagged <- grep("_N|_V[^BH]|_JJ|_RB", zuck_txt, value=T)
 #filtered_tagged <- grep("_NP", words_tagged, value=T)
 
 tag_table<- sort(table(filtered_tagged), decreasing = T)
-head(tag_table)
 Freq.tag <- data.frame(tag_table)
 Freq.tag <- data.frame(row.names = Freq.tag$filtered_tagged, Freq=Freq.tag$Freq)
-head(Freq.tag, 30)
 
 makeWordcloud(Freq.tag)

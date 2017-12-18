@@ -8,9 +8,12 @@ lemmatizer <- function (text) {
 
 analyzer <- function (path) {
   original_txt <- scan(file=path, what="char", sep=" ", quote=NULL, encoding="UTF-8")
+  #original_txt <- scan(file='./원문/billgates.txt', what="char", sep=" ", quote=NULL, encoding="UTF-8")
+  #original_txt
   original_txt <- unlist(strsplit(original_txt, '\n'))
   all_paste <- paste(gsub("\n", "", original_txt), collapse = " ")
-  tolower(all_paste)
+  #tolower(all_paste)
+
   
   # 소문자로 변경
   #gsub("I","I★", all_paste)
