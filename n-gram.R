@@ -4,7 +4,7 @@ bill_txt <- './원문/billgates.txt'
 mark_txt <- './원문/zuckerberg.txt'
 steve_txt <- './원문/stevejobs.txt'
 
-ana_txt <- bill_txt
+ana_txt <- steve_txt
 
 original_txt <- scan(file=ana_txt, what="char", sep=" ", quote=NULL, encoding="UTF-8")
 original_txt <- tolower(original_txt)
@@ -22,5 +22,5 @@ bi.gram <- paste(original_txt[1:(length(original_txt)-1)],
 bi.gram.Freq <- data.frame(sort(table(bi.gram), decreasing=T))
 bi.gram.Freq <- data.frame(Freq=bi.gram.Freq$Freq, row.names=bi.gram.Freq$bi.gram)
 
-head(tri.gram.Freq, decreasing=T, 10)
-head(bi.gram.Freq, decreasing=T, 13)
+head(tri.gram.Freq, decreasing=T, 8)
+head(bi.gram.Freq, decreasing=T, 17)
