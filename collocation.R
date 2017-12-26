@@ -4,9 +4,9 @@ bill_txt <- analyzer('./원문/billgates.txt')
 mark_txt <- analyzer('./원문/zuckerberg.txt')
 steve_txt <- analyzer('./원문/stevejobs.txt')
 
-ana_txt <- bill_txt
+ana_txt <- steve_txt
 
-search <- "people_NNS"
+search <- "death_NN"
 index <- which(ana_txt==search)
 span <- vector()
 for (i in index) {
@@ -35,6 +35,8 @@ collocates <- data.frame(Freq.co,
 collocates <- collocates[grep("_N|_V[^BH]|_JJ|_RB", rownames(collocates)),]
 t.score.sort <- collocates[order(collocates$t.score, decreasing=T), ]
 MI.sort <- collocates[order(collocates$MI, decreasing=T), ]
-MI.sort <- MI.sort[MI.sort$W1W2>2,]
+MI.sort <- MI.sort[MI.sort$W1W2>1,]
 head(t.score.sort, 10)
+t.score.sort
 head(MI.sort, 10)
+
