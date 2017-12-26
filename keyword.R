@@ -26,4 +26,4 @@ CHI <- as.data.frame(CHI)
 
 head(CHI[order(CHI$bill, decreasing=T),], 15)
 head(CHI[order(CHI$mark, decreasing=T),], 15)
-head(CHI[order(CHI$steve, decreasing=T),], 15)
+head(CHI[order(CHI$steve, decreasing=T),], 20)
